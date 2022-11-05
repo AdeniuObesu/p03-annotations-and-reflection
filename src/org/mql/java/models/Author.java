@@ -11,11 +11,13 @@ import org.mql.java.annotations.TextField;
  *
  * Oct 31, 2022
  */
-@Form(value = "Nouvel auteur", width = 500)
+@Form(value = "Nouvel auteur")
 public class Author {
 	@TextField(label = "Identificateur", size = 20)
 	private int id;
+	@TextField(size = 30)
 	private String name;
+	@TextField(label = "Annee de naissance", size = 10)
 	private int yearBorn;
 	private String country;
 	

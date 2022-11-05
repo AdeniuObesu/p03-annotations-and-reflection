@@ -16,6 +16,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Form {
-	String value();
-	int width() default 100;
+	String value() default "";
 }

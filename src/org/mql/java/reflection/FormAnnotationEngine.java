@@ -14,27 +14,37 @@ import org.mql.java.annotations.TextField;
  * Oct 31, 2022
  */
 public class FormAnnotationEngine {
+	
+	private org.mql.java.ui.Form form;
 	/**
 	 * 
 	 */
 	public FormAnnotationEngine(Object target) {
-		Form form = target.getClass().getDeclaredAnnotation(Form.class);
-		if(form != null) {
-			String title = form.value();
+		Form f = target.getClass().getDeclaredAnnotation(Form.class);
+		if(f != null) {
+			String title = f.value();
 			if("".equals(title)) {
 				title = "New " + target.getClass().getSimpleName();
 			}
 			System.out.println("Title : " + title);
-			Field[] fields = target.getClass().getDeclaredFields();
+			form = new org.mql.java.ui.Form(title);
+			Field fields[] = target.getClass().getDeclaredFields();
 			for(Field field : fields) {
 				TextField tf = field.getDeclaredAnnotation(TextField.class);
-				if( tf!= null ) {
+				if( tf != null ) {
 					String label = tf.label();
 					if("".equals(label))
 						label = field.getName();
 					System.out.println(" - " + label + " : "+ tf.size());
+					form.add(label, tf.size());
 				}
 			}
 		}
+	}
+	/**
+	 * @return the form
+	 */
+	public org.mql.java.ui.Form getForm() {
+		return form;
 	}
 }
