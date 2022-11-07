@@ -24,12 +24,6 @@ public class Menu extends JMenuBar{
 	private final String iconsFolder = "resources/icons"; 
 	public Menu() {
 			
-		}
-	
-	public Menu(String[][] labels) {
-		for(String label[] : labels) {
-			
-		}
 	}
 	
 	public void add(Object controller) {
