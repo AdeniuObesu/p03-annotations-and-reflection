@@ -5,6 +5,8 @@ package org.mql.java.ui;
 
 import java.lang.reflect.Method;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -19,9 +21,15 @@ import org.mql.java.annotations.Controller;
  */
 public class Menu extends JMenuBar{
 	private static final long serialVersionUID = 1l;
-	
+	private final String iconsFolder = "resources/icons"; 
 	public Menu() {
-		
+			
+		}
+	
+	public Menu(String[][] labels) {
+		for(String label[] : labels) {
+			
+		}
 	}
 	
 	public void add(Object controller) {
@@ -37,7 +45,8 @@ public class Menu extends JMenuBar{
 					String name = a.value();
 					if(name.equals(""))
 						name = method.getName();
-					JMenuItem item = new JMenuItem(name);
+					ImageIcon icon = new ImageIcon(a.icon());
+					JMenuItem item = new JMenuItem(name, icon);
 					menu.add(item);
 				}
 			}
