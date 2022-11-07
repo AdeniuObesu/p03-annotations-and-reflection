@@ -21,19 +21,19 @@ public class EditController {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Action(value="Copy", icon="copy.gif")
+	@Action(value="Copy", icon="Copy.gif")
 	public String copy() {
 		System.out.println("Copy");
 		return "copy.jsp";
 	}
 
-	@Action(value="Cut", icon="cut.gif")
+	@Action(value="Cut", icon="Cut.gif")
 	public String cut() {
 		System.out.println("Cut");
 		return "cut.jsp";
 	}
 
-	@Action(value="Paste", icon="paste.gif")
+	@Action(value="Paste", icon="Paste.gif")
 	public String paste() {
 		System.out.println("Paste");
 		return "paste.jsp";

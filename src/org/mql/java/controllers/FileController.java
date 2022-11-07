@@ -20,19 +20,19 @@ public class FileController {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@Action(value="New", icon="new.gif")
+	@Action(value="New", icon="New.gif")
 	public String newFile() {
 		System.out.println(">> New file");
 		return "new-file-ok.jsp";
 	}
 	
-	@Action(value="Open", icon="open.gif")
+	@Action(value="Open", icon="Open.gif")
 	public String open() {
 		System.out.println(">> Open file");
 		return "open-file-ok.jsp";
 	}
 
-	@Action(value="Open", icon="save.gif")
+	@Action(value="Open", icon="Save.gif")
 	public String save() {
 		System.out.println(">> Save file");
 		return "save-file-ok.jsp";
